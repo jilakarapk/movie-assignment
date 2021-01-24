@@ -1,0 +1,211 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  outline: none;
+}
+
+.app {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.firstTab {
+  background-color: #f3f4fc;
+  width: 100%;
+  margin: 30px;
+  border-radius: 20px;
+  position: relative;
+}
+
+.secondTab {
+  background-color: #feffca;
+  width: 100%;
+  margin: 30px;
+  border-radius: 20px;
+}
+
+.container {
+  margin-left: 5vw;
+}
+
+.tab {
+  font-size: 40px;
+  margin: 20px;
+}
+
+form {
+  font-size: 25px;
+}
+
+input {
+  width: 80%;
+  height: 35px;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  color: #1d1d1f;
+  margin: 10px 0;
+}
+
+.submit-button {
+  padding: 5px 10px;
+  font-size: 25px;
+  margin: 20px 0;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  color: white;
+  background-color: #2e2d2d;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #494848;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.firsttab-list {
+  width: 100%;
+}
+
+.firsttab-list div {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  background-color: white;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.firsttab-list div li {
+  padding: 10px;
+  font-size: 20px;
+}
+
+.firsttab-list div button {
+  color: white;
+  margin: 11px 8px 8px;
+  padding: 0px 6px;
+  cursor: pointer;
+  font-size: 18px;
+  border: 0px;
+  border-radius: 3px;
+  background-color: rgb(74, 174, 241);
+}
+
+.notfound {
+  font-size: 20px;
+  background-color: rgb(219, 30, 30);
+  padding: 10px 25px;
+  border-radius: 10px;
+  display: inline-block;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.pagination-list li {
+  float: left;
+  margin-bottom: 14px;
+  background-color: white;
+  padding: 2px 8px;
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.active-list {
+  color: rgb(61, 61, 248);
+  font-weight: bold;
+}
+
+.modal {
+  position: absolute;
+  top: 5%;
+  left: 9.5vw;
+  width: 60%;
+  background-color: #2e2d2d;
+  color: white;
+  border-radius: 20px;
+  box-shadow: 0px 50px 1500px 200px rgb(31, 31, 31);
+}
+
+.movie-details {
+  margin: 20px 0px 0px 20px;
+}
+
+.movie-details h2 {
+  margin-bottom: 10px;
+}
+.movie-details p {
+  font-size: 120%;
+}
+
+.hit {
+  background-color: green;
+  padding: 0px 10px;
+  border-radius: 2px;
+}
+
+.flop {
+  background-color: rgb(243, 49, 49);
+  padding: 0px 10px;
+  border-radius: 2px;
+}
+
+.modal-close {
+  color: white;
+  background-color: tomato;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 0;
+  font-size: 18px;
+  padding: 5px 10px;
+  margin: 20px;
+}
+
+.movie-posters {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 80%;
+}
+
+.movie-posters figure {
+  padding: 8px;
+  border-radius: 15px;
+  margin: 0 0 10px 0;
+  background-color: white;
+}
+
+img {
+  height: 300px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.movie-posters figcaption {
+  text-align: center;
+  padding: 5px 10px;
+  background-color: #494848;
+  color: white;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 204px;
+}
+
+@media only screen and (max-width: 640px) {
+  .app {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+  }
+}
