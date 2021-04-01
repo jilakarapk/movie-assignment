@@ -14,11 +14,12 @@ class FirstTab extends Component {
     currentPage: 1,
     modalMovie: {},
     showModal: false,
+    loader: false,
   };
 
-  handleSubmit = async (movie, year) => {
+  handleSubmit = async (movie, year, handleLoader) => {
     this.setState({ movies: [], error: null, currentPage: 1 });
-
+    handleLoader();
     const { data } = await axios.get(
       `http://www.omdbapi.com/?s=${movie}&y=${year}&apikey=4d604b6c`
     );
@@ -26,6 +27,7 @@ class FirstTab extends Component {
     if (Error) {
       this.setState({ error: true });
     } else this.setState({ movies: Search });
+    handleLoader();
   };
 
   handlePageChange = (page) => {
@@ -33,15 +35,21 @@ class FirstTab extends Component {
   };
 
   showMovieInfo = async (id) => {
+    this.loaderToggle();
     const { data } = await axios.get(
       `http://www.omdbapi.com/?i=${id}&plot=full&apikey=4d604b6c`
     );
     this.setState({ modalMovie: data });
     this.modalToggle();
+    this.loaderToggle();
   };
 
   modalToggle = () => {
     this.setState({ showModal: !this.state.showModal });
+  };
+
+  loaderToggle = () => {
+    this.setState({ loader: !this.state.loader });
   };
 
   render() {

@@ -4,6 +4,7 @@ class InputForm extends Component {
   state = {
     movie: '',
     year: '',
+    loader: false,
   };
 
   handleChange = (e) => {
@@ -12,7 +13,12 @@ class InputForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.handleSubmit(this.state.movie, this.state.year);
+    const { movie, year } = this.state;
+    this.props.handleSubmit(movie, year, this.handleLoader);
+  };
+
+  handleLoader = () => {
+    this.setState({ loader: !this.state.loader });
   };
 
   render() {
@@ -23,7 +29,7 @@ class InputForm extends Component {
           <input
             type='text'
             id='movie'
-            value={this.state.movieName}
+            value={this.state.movie}
             onChange={this.handleChange}
             required
           />
@@ -41,6 +47,7 @@ class InputForm extends Component {
         </label>
         <br />
         <button className='submit-button'>Submit</button>
+        {this.state.loader && <div className='spinner'></div>}
       </form>
     );
   }

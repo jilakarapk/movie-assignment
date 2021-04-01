@@ -9,8 +9,9 @@ class SecondTab extends Component {
     error: null,
   };
 
-  handleSubmit = async (movie, year) => {
+  handleSubmit = async (movie, year, handleLoader) => {
     this.setState({ movies: [], error: null });
+    handleLoader();
     const { data } = await axios.get(
       `http://www.omdbapi.com/?s=${movie}&y=${year}&apikey=4d604b6c`
     );
@@ -18,6 +19,7 @@ class SecondTab extends Component {
     if (Error) {
       this.setState({ error: true });
     } else this.setState({ movies: Search });
+    handleLoader();
   };
 
   render() {
